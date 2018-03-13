@@ -1,4 +1,6 @@
-﻿using System;
+﻿//The JobData class has been refactored to work with Job objects
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TechJobs.Models;
@@ -10,6 +12,7 @@ namespace TechJobs.Data
         /**
          * A data store for Job objects
          */
+         // references objects rather than strings
 
         public List<Job> Jobs { get; set; } = new List<Job>();
         public JobFieldData<Employer> Employers { get; set; } = new JobFieldData<Employer>();
@@ -22,6 +25,8 @@ namespace TechJobs.Data
         {
             JobDataImporter.LoadData(this);
         }
+
+        // Rather than having a collection of static methods, JobData now has several instance methods
 
         private static JobData instance;
         public static JobData GetInstance()
