@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// The logic to import data from the CSV file
+
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TechJobs.Models;

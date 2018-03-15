@@ -1,4 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿// enables display of a form for creating a new job, along with processing of the form
+// the code does this with two properties, Name and EmployerID
+// Name is a string and will be displayed as a text box
+// EmployerID will be displayed as a dropdown that will allow the user to select from the list of all existing employers
+
+// Complete this ViewModel to enable full creation of a Job object, including all necessary fields
+
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using TechJobs.Data;

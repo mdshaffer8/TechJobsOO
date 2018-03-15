@@ -1,4 +1,6 @@
-﻿//The JobData class has been refactored to work with Job objects
+﻿// The JobData class has been refactored to work with Job objects, and the objects that a Job has references to (rather than strings)
+// Rather than having a collection of static methods, JobData now has several instance methods
+// Each controller already has a JobData object set up for you, named jobData
 
 using System;
 using System.Collections.Generic;
@@ -26,7 +28,7 @@ namespace TechJobs.Data
             JobDataImporter.LoadData(this);
         }
 
-        // Rather than having a collection of static methods, JobData now has several instance methods
+        
 
         private static JobData instance;
         public static JobData GetInstance()
@@ -44,6 +46,7 @@ namespace TechJobs.Data
          * Return all Job objects in the data store
          * with a field containing the given term
          */
+         // (find all jobs matching the given string in any fields)
         public List<Job> FindByValue(string value)
         {
             var results = from j in Jobs
@@ -62,6 +65,7 @@ namespace TechJobs.Data
          * Returns results of search the jobs data by key/value, using
          * inclusion of the search term.
          */
+         // (find all jobs matching the given string in the given column/property)
         public List<Job> FindByColumnAndValue(JobFieldType column, string value)
         {
             var results = from j in Jobs
@@ -98,6 +102,7 @@ namespace TechJobs.Data
          * Returns the Job with the given ID,
          * if it exists in the store
          */
+         // (find a job by its id)
         public Job Find(int id)
         {
             var results = from j in Jobs
